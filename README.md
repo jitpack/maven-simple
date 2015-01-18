@@ -2,7 +2,7 @@
 
 Example maven project generated using `maven-archetype-quickstart`
 
-[![GitHub release](https://img.shields.io/github/tag/jitpack/example.svg)](https://jitpack.io/#jitpack/example/0.1)
+[![Release](https://img.shields.io/github/tag/jitpack/example.svg?label=maven)](https://jitpack.io/#jitpack/example/0.1)
 
 To use it in your Maven build add:
 ```xml
@@ -21,3 +21,4 @@ and the dependency:
 		<version>v0.1</version>
 	</dependency>
 ```
+
