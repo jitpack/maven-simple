@@ -18,7 +18,7 @@ and the dependency:
 	<dependency>
 		<groupId>com.github.jitpack</groupId>
 		<artifactId>example</artifactId>
-		<version>v0.1</version>
+		<version>0.1</version>
 	</dependency>
 ```
 
