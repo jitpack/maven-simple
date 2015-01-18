@@ -2,7 +2,17 @@
 
 Example maven project generated using `maven-archetype-quickstart`
 
-[![GitHub release](https://img.shields.io/github/tag/jitpack/example.svg)]()
+[![GitHub release](https://img.shields.io/github/tag/jitpack/example.svg)](https://jitpack.io/#jitpack/example/0.1)
+
+To use it in your Maven build add:
+```xml
+	<repository>
+	    <id>jitpack.io</id>
+	    <url>https://jitpack.io</url>
+	</repository>
+```
+
+and the dependency:
 
 ```xml
 	<dependency>
@@ -11,4 +21,3 @@ Example maven project generated using `maven-archetype-quickstart`
 		<version>v0.1</version>
 	</dependency>
 ```
-
