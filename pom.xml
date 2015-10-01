@@ -3,12 +3,12 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.github.jitpack</groupId>
-  <artifactId>example</artifactId>
+  <artifactId>maven-simple</artifactId>
   <version>0.2-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>example</name>
-  <url>https://jitpack.io/#jitpack/example/0.1</url>
+  <name>Simple Maven example</name>
+  <url>https://jitpack.io/#jitpack/maven-simple/0.1</url>
 
   <dependencies>
     <dependency>
