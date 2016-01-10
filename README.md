@@ -2,9 +2,9 @@
 
 Example Maven project generated using `maven-archetype-quickstart`
 
-[https://jitpack.io/#jitpack/maven-simple/0.1](https://jitpack.io/#jitpack/maven-simple/0.1)
+[https://jitpack.io/#jitpack/maven-simple](https://jitpack.io/#jitpack/maven-simple)
 
-[![Release](https://img.shields.io/github/tag/jitpack/maven-simple.svg?label=maven)](https://jitpack.io/#jitpack/maven-simple/0.1)
+[![Release](https://jitpack.io/v/jitpack/maven-simple.svg)](https://jitpack.io/#jitpack/maven-simple)
 
 To use it in your Maven build add:
 ```xml
