@@ -12,7 +12,7 @@ public class AppTest
     @Test
     public void testApp()
     {
-        assertEquals("Hello world", app.greet("world"));
+        assertEquals("Testing Jenkinsworld", app.greet("world"));
     }
 
     @Test
