@@ -1,4 +1,4 @@
-node {
+ node{
  stage('Scm Checkout'){
    git 'https://github.com/razzpothula/maven-simple'
   stage('Compile-Package'){
