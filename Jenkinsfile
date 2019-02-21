@@ -1,9 +1,9 @@
 node {
- stage('scm checkout'){
+ stage('Scm Checkout'){
    git 'https://github.com/razzpothula/maven-simple'
-  stage('compile-package'){
+  stage('Compile-Package'){
      //Get maven home path
    def mvnhome = tool name: 'mvn', type: 'maven'
-   sh "${mvnhome}/bin package"
+   sh "${mvnHome}/bin/mvn package"
     }
 }
