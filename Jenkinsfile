@@ -5,9 +5,3 @@ pipeline {
         }
     }
 }
-agent{
-       stage('Compile') {
-            def mvnhome = tool name: 'mvn', type: 'maven'
-              sh "${mvnhome}/bin/mvn compile"
-        }
-    }
