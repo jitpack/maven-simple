@@ -20,9 +20,8 @@ pipeline
         }
         stage('E-Mail Notification'){
             mail bcc: '', body: '''Email notification for job
-thanks
-rajesh
-''', cc: '', from: '', replyTo: '', subject: 'Jenkinsfile', to: 'rajeshpothula.bj@gmail.com'
+             thanks
+             rajesh
+             ''', cc: '', from: '', replyTo: '', subject: 'Jenkinsfile', to: 'rajeshpothula.bj@gmail.com'
      }
-        
     }
