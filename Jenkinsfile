@@ -14,4 +14,8 @@ pipeline
                         sh "${mvnhome}/bin/mvn sonar:sonar"
             }
         }
-    }
+        stage('Package'){
+            def mvnhome = tool name: 'mvn', type: 'maven'
+            sh "${mvnhome}/bin/mvn package"
+        }
+     }
