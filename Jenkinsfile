@@ -19,9 +19,10 @@ pipeline
             sh "${mvnhome}/bin/mvn package"
         }
         stage('E-Mail Notification'){
-            mail bcc: '', body: '''this is jenkins pipeline code for email notification
-                thanks
-                 rajesh''', cc: '', from: '', replyTo: '', subject: 'jenkinsfile ', to: 'rajeshpothula.bj@gmail.com'
+            mail bcc: '', body: '''Email notification for job
+thanks
+rajesh
+''', cc: '', from: '', replyTo: '', subject: 'Jenkinsfile', to: 'rajeshpothula.bj@gmail.com'
      }
         
     }
