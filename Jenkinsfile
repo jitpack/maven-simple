@@ -19,7 +19,7 @@ pipeline
             sh "${mvnhome}/bin/mvn package"
         }
         stage('Tomcat-Deploy'){
-            shagent(['tomcat-deploy']) {
+            sshagent (credentials: ['deploy-dev']) {
     sh 'scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/jenkinsfile_project/target/*.jar ubuntu@13.233.2.55:/opt/tomcat/webapps/'
  }
     }
