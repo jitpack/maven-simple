@@ -10,7 +10,7 @@ pipeline
         }
         stage('SonarQube Analysis'){
             def mvnhome = tool name: 'mvn', type: 'maven'
-            withSonarQubeEnv('sonar'){
+            withSonarQubeEnv('sonar-3'){
                         sh "${mvnhome}/bin/mvn Sonar:sonar"
             }
         }
