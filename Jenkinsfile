@@ -18,4 +18,10 @@ pipeline
             def mvnhome = tool name: 'mvn', type: 'maven'
             sh "${mvnhome}/bin/mvn package"
         }
+        stage('E-Mail Notification'){
+            mail bcc: '', body: '''this is jenkins pipeline code for email notification
+                thanks
+                 rajesh''', cc: '', from: '', replyTo: '', subject: 'jenkinsfile ', to: 'rajeshpothula.bj@gmail.com'
      }
+        
+    }
