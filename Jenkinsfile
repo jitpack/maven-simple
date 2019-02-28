@@ -15,8 +15,10 @@ pipeline
             }
         }
         stage("Quality Gate"){
-            timeout(time: 1, unit: 'HOURS') { // Just in case something goes wrong, pipeline will be killed after a timeout
-                def qg = waitForQualityGate() // Reuse taskId previously collected by withSonarQubeEnv
+            timeout(time: 1, unit: 'HOURS') { 
+                // Just in case something goes wrong, pipeline will be killed after a timeout
+                def qg = waitForQualityGate() 
+                // Reuse taskId previously collected by withSonarQubeEnv
                 if (qg.status != 'OK') {
                     error "Pipeline aborted due to quality gate failure: ${qg.status}"
                     }
@@ -27,8 +29,8 @@ pipeline
             sh "${mvnhome}/bin/mvn package"
         }
         stage('Tomcat-Deploy'){
-            sshagent (credentials: ['deploy-dev']) {
-    sh 'scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/jenkinsfile_project/target/*.jar ubuntu@13.233.2.55:/opt/tomcat/webapps/'
+        sshagent(['tomcat-deploy']) {    
+    sh 'scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/jenkinsfile_project/target/*.jar ubuntu@13.233.229.217:/opt/tomcat/webapps/'
  }
     }
         stage('E-Mail Notification'){
