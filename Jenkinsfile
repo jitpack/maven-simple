@@ -40,4 +40,3 @@ pipeline
              ''', cc: '', from: '', replyTo: '', subject: 'Jenkinsfile', to: 'rajeshpothula.bj@gmail.com'
               }
           }
-}
