@@ -30,8 +30,8 @@ pipeline
         }
         stage('Tomcat-Deploy'){
         sshagent(['tomcat-deploy']) {    
-    sh 'scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/jenkinsfile_project/target/*.jar ubuntu@13.233.229.217:/opt/tomcat/webapps/'
- }
+        sh 'scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/jenkinsfile_project/target/*.jar ubuntu@13.233.229.217:/opt/tomcat/webapps/'
+         }
     }
         stage('E-Mail Notification'){
             mail bcc: '', body: '''Email notification for job
