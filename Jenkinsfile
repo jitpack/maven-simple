@@ -28,6 +28,9 @@ pipeline
             def mvnhome = tool name: 'mvn', type: 'maven'
             sh "${mvnhome}/bin/mvn package"
         }
+        stage('JUnit'){
+            junit '*/tagrat/*.xml'
+        }
         stage('Tomcat-Deploy'){
         sshagent(['tomcat-deploy']) {    
         sh 'scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/jenkinsfile_project/target/*.jar ubuntu@13.233.229.217:/opt/tomcat/webapps/'
