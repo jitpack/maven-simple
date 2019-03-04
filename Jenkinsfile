@@ -1,7 +1,7 @@
 pipeline{
     node{
         stage('SCM Checkout'){
-            git url :
+            git url :'https://github.com/razzpothula/maven-simple.git'
         }
     }
 }
