@@ -9,12 +9,11 @@ pipeline
            sh "${mvnhome}/bin/mvn compile"      
              } 
             stage('SonarQube Analysis'){
+               //we can check the sonarqube code analysis
             def mvnhome = tool name: 'mvn', type: 'maven'
              withSonarQubeEnv('sonar'){
                sh"${mvnhome}/bin/mvn sonar:sonar"       
                  }
-                } 
-             }
-                  
+              }     
                       
                      
