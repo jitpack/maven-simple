@@ -48,6 +48,10 @@
       <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.0.1</version>
+                <configuration>
+                    <javadocExecutable>${java.home}/bin/javadoc</javadocExecutable>
+                </configuration>
                 <executions>
                     <execution>
                         <id>attach-javadocs</id>
@@ -58,6 +62,7 @@
                 </executions>
       </plugin>
     </plugins>
+
   </build>
 
 </project>
