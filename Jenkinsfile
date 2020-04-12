@@ -8,10 +8,14 @@ pipeline {
     
     stages {
         
-        stage ('Compile')
+        stage ('Compile') {
+                  
+          
+
         steps {
             
             sh "mvn clean compile"
+                }
         }
         stage ('Test') {
                   
@@ -23,10 +27,12 @@ pipeline {
               
         stage('Deploy') {
             
+           steps {
             sh "mvn clean install"
-            
-            
-        }
+                  }
+
+              }
+
 
 
 
