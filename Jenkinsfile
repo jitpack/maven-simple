@@ -1,7 +1,7 @@
 pipeline
     node{
         stage('SCM Checkout') {
-            https://github.com/razzpothula/maven-simple.git
+          git url:'https://github.com/razzpothula/maven-simple.git'
         }
         stage('Compile'){
             //Get maven home path
