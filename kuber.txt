@@ -1,0 +1,7 @@
+kubectl run dedora --image=fedora
+
+kubectl get deployments
+kubectl delete deployment fedora
+kubectl run fedora --image=fedora -- /usr/bin/sleep 3600
+kubectl get deployments
+

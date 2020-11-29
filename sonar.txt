@@ -1,0 +1,26 @@
+$ mysql -u root -p
+
+Run following commands to create user
+
+CREATE DATABASE sonar CHARACTER SET utf8 COLLATE utf8_general_ci; done
+
+CREATE USER 'sonar' IDENTIFIED BY 'sonar'; done
+
+GRANT ALL ON sonar.* TO sonar@localhost; done
+GRANT ALL ON sonar.* TO sonar@'%'; done
+select * from user where user='sonar'\G; done
+SELECT * FROM DB WHERE user='sonar'\G;
+
+GRANT ALL ON sonar.* TO 'sonar'@'%' IDENTIFIED BY 'sonar';
+GRANT ALL ON sonar.* TO 'sonar'@'localhost' IDENTIFIED BY 'sonar';
+FLUSH PRIVILEGES;
+
+
+sudo cp bin/linux-x86-64/sonar.sh /etc/init.d/sonar
+
+SONAR_HOME=/opt/sonar
+Platform=
+
+sudo update.rc.d -f sonar remove
+
+http://localhost:9000/sonar
