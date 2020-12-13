@@ -13,6 +13,7 @@ pipeline
             withSonarQubeEnv('sonar'){
                         sh "${mvnhome}/bin/mvn sonar:sonar"
             }
+        }
     }
 
 
