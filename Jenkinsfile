@@ -24,11 +24,6 @@ environment {
 					echo "The branch name - ${env.BRANCH_NAME}"
 				        def startOfTheBranchName = env.BRANCH_NAME.indexOf('/') // get the branch name without feature/hotfix/etc
 					// new name to have first 20 chars from the branch name
-					echo "${startOfTheBranchName}"
-					def branchSubstring = env.BRANCH_NAME.substring(startOfTheBranchName + 1)
-					echo "${branchSubstring}"
-					def branchSubstring1 = env.BRANCH_NAME.substring(startOfTheBranchName + 1, startOfTheBranchName + 21)
-                                        echo "${branchSubstring1}"
 				}
 			}
 		}
