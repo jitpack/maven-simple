@@ -22,6 +22,9 @@ environment {
 			steps {
 				script {
 					echo "The branch name - ${env.BRANCH_NAME}"
+				        def startOfTheBranchName = env.BRANCH_NAME.indexOf('/') // get the branch name without feature/hotfix/etc
+					// new name to have first 20 chars from the branch name
+					echo "${startOfTheBranchName}"
 
 				}
 			}
