@@ -1,0 +1,18 @@
+replicaCount: 2
+image:
+  repository: us-docker.pkg.dev/google-samples/containers/gke/hello-app
+  pullPolicy: IfNotPresent
+  tag: "2.0"
+ 
+env:
+  environ: true
+
+service:
+  type: ClusterIP
+  port: 8080
+  name: ui
+  targetport: 8080
+  
+containers:
+  name: react-ui
+  
