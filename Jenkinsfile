@@ -1,3 +1,4 @@
+def PATH = '/var/lib/jenkins/jobs/maven sample-multibranch/branches/feature-mult.1qvcib.ppipeline-ci/workspace'
 pipeline {
     agent any
     tools { 
@@ -41,9 +42,44 @@ environment {
 			}
 			
 		}
+	    stage('helm-lint') {
+            steps {
+                   sh "helm lint ${WORKSPACE}/oc-deployment"
+	  		}
+			
+		}
+	    	stage("Deploy to DEV from branch") {
+			when {
+				allOf {
+					not {
+						branch 'develop'
+					}
+					expression {
+						return params.DeployFromBranch
+					}
+				}
+			}
+			steps {
+				script {
+					echo "Build and push docker with new version"
+
+				}
+			}
+		}
+	    		stage("Release and deploy to DEV") {
+		   	when {
+				branch 'develop'
+            }
+			steps {
+				sh "mvn scm:tag"
+				sh "mvn docker:build docker:push"
+			}
+			
+		}
     }
 
 }
+	
 def getVersion() {
 	return sh(returnStdout: true,
 script: 'mvn org.apache.maven.plugins:maven-help-plugin:3.1.0:evaluate -Dexpression=project.version -q -DforceStdout --batch-mode -U -e -Dsurefire.useFile=false'
