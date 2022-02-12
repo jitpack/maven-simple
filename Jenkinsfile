@@ -72,7 +72,7 @@ environment {
             }
 			steps {
 				sh "mvn scm:tag"
-				sh "mvn docker:build docker:push"
+			
 			}
 			
 		}
