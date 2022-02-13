@@ -39,7 +39,7 @@ environment {
 		}
 	    stage("Build") {
 			steps {
-			        script{ datas = readYaml (file: 'Chart.yaml') }
+			        script{ datas = readYaml (file: 'oc-deployment/Chart.yaml') }
                                 echo datas.version.toString()
 				sh "mvn clean verify"
 			}
