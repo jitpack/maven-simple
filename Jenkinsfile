@@ -1,5 +1,5 @@
 def PATH = '/var/lib/jenkins/jobs/maven sample-multibranch/branches/feature-mult.1qvcib.ppipeline-ci/workspace'
-def Version = readFile 'oc-deployment/Chart.yaml'
+def Version = readFile 'oc-deployment/templates/NOTES.txt'
 				
 pipeline {
     agent any
