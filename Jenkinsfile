@@ -43,7 +43,9 @@ environment {
 			
 		}
 	    stage('helm-lint') {
+		    when { changeset "oc-deployment/*"}
             steps {
+		    
                    sh "helm lint ${WORKSPACE}/oc-deployment"
 	  		}
 			
