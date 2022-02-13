@@ -1,5 +1,4 @@
 def PATH = '/var/lib/jenkins/jobs/maven sample-multibranch/branches/feature-mult.1qvcib.ppipeline-ci/workspace'
-def Version = readFile 'oc-deployment/templates/NOTES.txt'
 				
 pipeline {
     agent any
@@ -40,8 +39,8 @@ environment {
 		}
 	    stage("Build") {
 			steps {
-				
-                                echo "${Version.version}"
+			        script{ datas = readYaml (file: 'Chart.yaml') }
+                                echo datas.version.toString()
 				sh "mvn clean verify"
 			}
 			
