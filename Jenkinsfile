@@ -40,7 +40,7 @@ environment {
 		}
 	    stage("Build") {
 			steps {
-				def Version = readFile "${env.WORKSPACE}/oc-deployment/Chart.yaml"
+				def Version = readFile 'oc-deployment/Chart.yaml'
                                 echo "${Version.version}"
 				sh "mvn clean verify"
 			}
