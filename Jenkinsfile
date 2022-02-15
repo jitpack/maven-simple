@@ -68,7 +68,7 @@ environment {
 def chartVersion = chart.version.toString()
 			 echo "Helmchart version  - ${chartVersion}"
 			 echo "App version - " + getVersion()
-                       sh "helm package ${WORKSPACE}/helm --version ${chartVersion} --app-version ${chartVersion}"
+                       sh "helm package ${WORKSPACE}/helmchart/oc-deployment --version ${chartVersion} --app-version ${chartVersion}"
                        rtUpload(
                        serverId: 'jfroginstance',
                        spec: '''{
