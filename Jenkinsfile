@@ -17,6 +17,18 @@ environment {
 	
     }
     stages {
+	    stage('Checkout') {
+    steps {
+     checkout([  
+            $class: 'GitSCM', 
+            branches: [[name: 'refs/heads/master']], 
+            doGenerateSubmoduleConfigurations: false, 
+            extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'Combination']], 
+            submoduleCfg: [], 
+            userRemoteConfigs: [[credentialsId: '13d412be-0d91-447a-b125-db7f5800cdb2', url: 'https://github.com/Gopalakrishnan997/helm-chart.git']]
+        ])
+    }
+}
 		stage("Adjust version") {
 			when {
 				not {
@@ -37,7 +49,7 @@ environment {
 				}
 			}
 		}
-	    stage("Build") {
+	    stage("") {
 			steps {
 			        script{ datas = readYaml (file: 'oc-deployment/Chart.yaml') }
                                 echo datas.version.toString()
