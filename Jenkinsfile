@@ -54,13 +54,13 @@ environment {
 			
 		}
 	    stage('Check Helmchart config') {
-	    when { changeset "helm-chart/*"}
+	    when { changeset "helmchart/oc-deploymwnt/*"}
             steps {
                    sh "helm lint ${WORKSPACE}/helm-chart/oc-deployment"
 	  		}	
 		}
 	    stage("Release helmchart") {
-            when { changeset "helm-chart/*"}
+            when { changeset "helmchart/oc-deploymwnt/*"}
             steps {
                script {
 		       def pomVersion = getVersion()
