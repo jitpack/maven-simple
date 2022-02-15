@@ -54,17 +54,17 @@ environment {
 			
 		}
 	    stage('Check Helmchart config') {
-	    when { changeset "helmchart/oc-deploymwnt/*"}
+	    when { changeset "helmchart/oc-deployment/*"}
             steps {
-                   sh "helm lint ${WORKSPACE}/helm-chart/oc-deployment"
+                   sh "helm lint ${WORKSPACE}/helmchart/oc-deployment"
 	  		}	
 		}
 	    stage("Release helmchart") {
-            when { changeset "helmchart/oc-deploymwnt/*"}
+            when { changeset "helmchart/oc-deployment/*"}
             steps {
                script {
 		       def pomVersion = getVersion()
-                 def chart = readYaml (file: 'helm-chart/oc-deployment/Chart.yaml')
+                 def chart = readYaml (file: 'helmchart/oc-deployment/Chart.yaml')
 def chartVersion = chart.version.toString()
 			 echo "Helmchart version  - ${chartVersion}"
 			 echo "App version - " + getVersion()
