@@ -9,7 +9,11 @@
 
   <name>Simple Maven example</name>
   <url>https://jitpack.io/#jitpack/maven-simple/0.1</url>
-
+    <scm>
+        <connection>scm:git:ssh://git@github.com/Gopalakrishnan997/mavensimple.git</connection>
+        <url>https://github.com/Gopalakrishnan997/mavensimple.git</url>
+        <tag>HEAD</tag>
+    </scm>
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -44,6 +48,13 @@
                     </execution>
                 </executions>
       </plugin>
+        <plugin>
+                <artifactId>maven-scm-plugin</artifactId>
+                <version>1.11.2</version>
+                <configuration>
+                    <tag>${project.version}</tag>
+                </configuration>
+            </plugin>
             
       <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
