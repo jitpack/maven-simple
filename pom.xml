@@ -9,7 +9,7 @@
 
   <name>Simple Maven example</name>
   <url>https://jitpack.io/#jitpack/maven-simple/0.1</url>
-
+<!--testing with pull and push-->
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
